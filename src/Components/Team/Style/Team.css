@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    scrollbar-width: none;
+}
+
+.team-container {
+    width: 100%;
+    z-index: -1; /* Adjusted z-index */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 100px 0px; /* Added to ensure full viewport height */
+}
+
+.team-sub-container {
+    max-width: 1300px;
+    height: 100%;
+    position: relative;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 40px 0; /* Added padding for top and bottom spacing */
+}
+
+.team-about-part {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px; /* Centers vertically with margin */
+}
+
+.team-about-title-inner {
+    margin: 10px 0px;
+}
+
+.team-about-title-inner h5 {
+    font-size: 23px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fb5b11;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+}
+
+.team-about-title-inner h1 {
+    max-width: 500px;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 62px;
+    margin: 10px 0 30px 0;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    overflow-y: hidden;
+}
+
+.team-all-member-btn-box {
+    min-width: 174px;
+    background-color: #fb5b11;
+    padding: 16px 24px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.team-all-member-btn-box a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+}
+
+.team-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Use repeat for 3 equal columns */
+    gap: 50px;
+}
+
+/* .card-box {
+    max-width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0% 0%,88% 0,100% 10%,100% 100%,0% 100%) !important;
+    position: relative;
+    top: 0;
+    left: 0;
+} */
+.card-image {
+    width: 100%;
+    height: 580px;
+
+    position: relative;
+    top: 0;
+    z-index: -1;
+
+}
+.card-image img {
+    width: 100%;
+    height: 480px;
+    clip-path: polygon(0% 0%,88% 0,100% 10%,100% 100%,0% 100%) !important;
+}
+
+.card-box {
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    
+}
+
+.card-sub-box {
+    box-shadow: 10px 10px 0px 0px #E4E4E4;
+    background-color: #f8f8f8;
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    width: unset;
+    height: unset;
+    
+    border-radius: 2px;
+    top: unset;
+    bottom: 50px;
+    padding: 20px 20px 20px 20px;
+    left: 50%;
+    max-width: 300px;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-sub-box h2 {
+    font-size: 24px;
+    color: #000;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    text-transform: capitalize;
+}
+
+.card-sub-box h5 {
+    font-size: 17px;
+    color: #777;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+}
+
+/* Added the before and after pseudo-element for the hover effect */
+ .card-sub-box::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px; /* The border height */
+    background-color: #fb5b11; /* Border color */
+    transition: width 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.card-sub-box::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.social-media-icon {
+    display: flex;
+    flex-direction: row; /* Keep horizontal layout for icons */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    text-align: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    z-index: 1;
+    background-color: #fb5b11;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 1px;
+    cursor: pointer;
+    gap: 10px;
+    transform: translateX(95%); /* Initially off-screen to the right */
+    transition: transform 0.5s ease-in-out; /* Apply transition to transform */
+    will-change: transform; /* Suggest to the browser to optimize this property */
+}
+
+/* On hover, move the social media icon back into view */
+.card-box:hover .social-media-icon {
+    transform: translateX(0); /* Reset to original position (in view) */
+}
+
+
+.social-media-icon span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 4px 2px;
+}
+
+
+.card-box:hover .card-sub-box::after {
+    width: 100%; /* Make the pseudo-element visible */
+}
+.bottom-line {
+    width: 100%;
+    margin-top: 40px;
+    height: 2px;
+    background-color: #e4e4e4;
+    position: relative;
+}
+
+.bottom-line::before,
+.bottom-line::after {
+    content: "";
+    position: absolute;
+    width: 10px; /* Set the size of the square */
+    height: 10px; /* Set the size of the square */
+    background-color: #fb5b11;
+}
+
+.bottom-line::before {
+    left: 0;
+    top: -4px; /* Adjust to align with the center of the line */
+}
+
+.bottom-line::after {
+    right: 0;
+    top: -4px; /* Adjust to align with the center of the line */
+}
+
+@media (max-width: 1367px) {
+    .team-about-title-inner h1 {
+        max-width: 500px;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 46px;
+        margin: 10px 0 30px 0;
+        font-family: "Jost", sans-serif;
+        font-style: normal;
+    }
+    .team-sub-container {
+        width: 100%;
+        padding: 40px 30px 0px 30px ;
+    }
+    
+}
+    
+
+@media (max-width:1024px) {
+     
+    .team-card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Use repeat for 3 equal columns */
+        gap: 50px;
+    }
+    .team-about-title-inner h1 {
+        max-width: 500px;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 40px;
+        margin: 10px 0 30px 0;
+        font-family: "Jost", sans-serif;
+        font-style: normal;
+    }
+    
+    
+    }
+
+@media (max-width:768px) {
+    .team-about-title-inner h1 {
+        max-width: 500px;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 36px;
+        margin: 10px 0 30px 0;
+        font-family: "Jost", sans-serif;
+        font-style: normal;
+    }
+    
+    .team-about-part{
+        flex-direction: column;
+    }
+    .team-sub-container {
+        max-width: 1300px;
+        height: 100%;
+        position: relative;
+        top: 0;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      padding: 40px 30px 0px 30px ;
+    
+      /* Added padding for top and bottom spacing */
+    }
+.card-sub-box {
+    box-shadow: 10px 10px 0px 0px #E4E4E4;
+    background-color: #f8f8f8;
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    width: unset;
+    height: unset;
+    display: inline-block;
+    border-radius: 2px;
+    top: unset;
+    bottom: 0px;
+    padding: 20px 20px 20px 20px;
+    left: 50%;
+    max-width: 80%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .card-image {
+        padding: 40px 0px;
+        width: 100%;
+        height: auto;
+    
+        position: relative;
+        top: 0;
+        z-index: -1;
+    
+    }
+    .card-image img {
+        width: 100%;
+        height: auto;
+        clip-path: polygon(0% 0%,88% 0,100% 10%,100% 100%,0% 100%) !important;
+    }
+    
+    .card-box {
+     
+      min-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        
+    }
+    .social-media-icon {
+        display: flex;
+        flex-direction: row; /* Keep horizontal layout for icons */
+        justify-content: center; /* Centers items horizontally */
+        align-items: center; /* Centers items vertically */
+        text-align: center;
+        position: absolute;
+        top: 130px;
+        right: 0;
+        z-index: 1;
+        background-color: #fb5b11;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 1px;
+        cursor: pointer;
+        gap: 10px;
+        transform: translateX(95%); /* Initially off-screen to the right */
+        transition: transform 0.5s ease-in-out; /* Apply transition to transform */
+        will-change: transform; /* Suggest to the browser to optimize this property */
+    }
+.team-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Use repeat for 3 equal columns */
+    gap: 50px;
+}
+
+}
+@media (max-width: 468px) {
+    .social-media-icon {
+        display: flex;
+        flex-direction: row; /* Keep horizontal layout for icons */
+        justify-content: center; /* Centers items horizontally */
+        align-items: center; /* Centers items vertically */
+        text-align: center;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        z-index: 1;
+        background-color: #fb5b11;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 1px;
+        cursor: pointer;
+        gap: 10px;
+        transform: translateX(95%); /* Initially off-screen to the right */
+        transition: transform 0.5s ease-in-out; /* Apply transition to transform */
+        will-change: transform; /* Suggest to the browser to optimize this property */
+    }
+    .card-sub-box h2 {
+        font-size: 20px;
+        color: #000;
+        font-weight: 500;
+        font-family: "Jost", sans-serif;
+        font-style: normal;
+        text-transform: capitalize;
+    }
+    
+    .card-sub-box h5 {
+        font-size: 14px;
+        color: #777;
+        font-weight: 500;
+        font-family: "Jost", sans-serif;
+        font-style: normal;
+    }
+}

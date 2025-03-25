@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    scrollbar-width: none;
+    
+}
+
+
+/* Slider container and description */
+.slider-main-container {
+    width: 100%;
+    background-color: #F0F0F0;
+    background-image: url(../../../Images/services_bg.png);
+    background-size: cover;
+    background-position: top;
+    z-index: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px ;
+    width: 100%;
+   
+  }
+  .slider-container{
+    max-width: 1300px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 40px 0; /* Added padding for top and bottom spacing */
+    gap: 50px;
+  }
+  .slider-title-inner{
+    max-width: 290px;
+    z-index: 2;
+    margin: 10px 0px;
+
+  }
+  .slider-title-inner h5{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fb5b11;   
+     font-family: "Jost", sans-serif;
+    font-style: normal;
+  }
+  .slider-title-inner h1{
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 62px;
+    margin: 10px 0 30px 0;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+}
+.slider-description {
+  
+
+}
+
+.slider-description p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+color: #5f5f5f;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+}
+  /* Styling for slider controls */
+  .slider-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  .slider-controls button {
+    padding: 22px 24px;
+    font-weight: 300;
+    color: #5f5f5f;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 30px 0px;
+    
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider-controls button:hover {
+    background-color: #fb5b11;
+    color: #ffffff;
+  }
+  
+  
+  
+  /* Styling for the slider */
+  .slider {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider-content {
+   display: grid;
+   grid-template-columns: auto auto auto ;
+   gap: 20px;
+   padding: 20px;
+   margin: 20px 0px;
+   
+  }
+  
+  .card {
+    width: 300px;
+    height: auto;
+    background-color: #f4f4f4;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the image doesn't overflow the card */
+  }
+  .card-img-box{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .card .card-img-box img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for transform */
+  }
+  
+  .card:hover .card-img-box img {
+    transform: scale(1.03); /* Scale image on hover */
+  }
+  .card-content{
+    width: 100%;
+    display: flex;
+    padding: 28px 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 13px;
+  }
+ .card-content h3{
+    font-size: 24px;
+    padding: 4px;
+    color: #000;
+    font-weight: 600;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+
+ }
+ .card-content p{
+    padding: 4px;
+    color: #636363;
+ }
+
+ .card-content a{
+    text-decoration: none;
+    color: #000;
+    font-size: 17px;
+    padding: 0px 2px ;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    transition: color 0.3s ease;
+    display: block;
+    justify-content: center;
+    align-items: center;
+ 
+ }
+ .card-content a:hover{
+    color: #fb5b11;
+ }
+ .card-content a span{
+    font-size: 12px;
+
+    font-weight: 400;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+ }
+ 
+  
+
+  /* .slider-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  } */
+  
+  @media (max-width: 1367px) {
+    .slider-container {
+      width: 100%;
+      flex-direction: row; /* Stack items on small screens */
+      padding: 0px 30px 0px 30px ;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .slider-title-inner h1{
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 58px;
+      margin: 10px 0 30px 0;
+      font-family: "Jost", sans-serif;
+      font-style: normal;
+  }
+  }
+  @media (max-width: 1024px) {
+    .slider-container {
+      width: 100%;
+      flex-direction: row; /* Stack items on small screens */
+      padding: 0px 30px 0px 30px ;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .slider-title-inner h1{
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 50px;
+      margin: 10px 0 30px 0;
+      font-family: "Jost", sans-serif;
+      font-style: normal;
+  }
+  }
+  @media (max-width: 768px) {
+    .slider-container {
+      width: 100%;
+      flex-direction: column; /* Stack items on small screens */
+      padding: 0px 30px 0px 30px ;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .slider-title-inner h1{
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 36px;
+      margin: 10px 0 30px 0;
+      font-family: "Jost", sans-serif;
+      font-style: normal;
+  }
+  }
+  
