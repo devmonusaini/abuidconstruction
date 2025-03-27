@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Style/Work.css";
+import { ReactTyped } from "react-typed";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import process from "../../Images/process.png";
 import serviceSine from "../../Images/services-sline-2.png";
 const Work = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <>
-      <div className="work-container">
+      <div id="work" className="work-container">
         <div className="work-sub-container">
           <div className="work-about-part">
             <div className="work-about-title-inner">
               <h5>How to process</h5>
-              <h1>Steps Of Construction Work Process</h1>
+              <h1 className="fade-in-out">
+                <ReactTyped
+                  startWhenVisible
+                  strings={["Steps Of Construction Work Process"]}
+                  typeSpeed={20}
+                  backSpeed={10}
+                  showCursor={false}
+                  loop={false}
+                />
+              </h1>
+
               <div className="work-description">
                 <p>
                   On the other hand we denounce righteou indignation and dislike
@@ -21,7 +37,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="work-image">
+          <div className="work-image" data-aos="fade-left">
             <img src={process} alt="work image" />
           </div>
         </div>

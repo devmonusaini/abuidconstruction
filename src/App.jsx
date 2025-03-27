@@ -1,27 +1,24 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
-import Hero from "./Components/Hero/Hero";
-import About from "./Components/About/About";
-import CardSlider from "./Components/CardSlider/CardSlider";
-import Work from "./Components/Work/Work";
-import Team from "./Components/Team/Team";
-import Testimonial from "./Components/Testimonial/Testimonial";
-import Contact from "./Components/Contact/Contact";
+import Home from "./Components/Home";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
+  const handleScrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <CardSlider />
-      <Work />
-      <Team />
-      <Testimonial />
-      <Contact />
+    <Router>
+      <Navbar handleScrollToSection={handleScrollToSection} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

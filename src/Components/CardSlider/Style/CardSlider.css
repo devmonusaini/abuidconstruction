@@ -249,6 +249,12 @@ color: #5f5f5f;
       justify-content: flex-start;
       align-items: flex-start;
     }
+    .slider-title-inner{
+      max-width: 100%;
+      z-index: 2;
+      margin: 10px 0px;
+  
+    }
     .slider-title-inner h1{
       font-size: 26px;
       font-weight: 600;

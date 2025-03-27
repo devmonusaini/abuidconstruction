@@ -5,7 +5,7 @@ import contact from "../../Images/contact-map.png";
 const Contact = () => {
   return (
     <>
-      <div className="contact-container">
+      <div id="contact" className="contact-container">
         <div className="contact-sub-container">
           <div className="contact-image">
             <img src={contact} alt="contact image" />

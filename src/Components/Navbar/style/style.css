@@ -11,6 +11,22 @@
     height: fit-content;
     position: relative;
 }
+.scrollup{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 40;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #ff5722;
+    opacity: 1;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.scrollup:hover{
+opacity: 0.8;
+}
 
 .side-nav{
     position: fixed;

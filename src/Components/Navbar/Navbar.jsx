@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import dark_logo from "../../Images/logo_dark.png";
 import fg1 from "../../Images/fg1.png";
 import fg2 from "../../Images/fg2.png";
@@ -15,9 +16,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import { SlSocialDribbble } from "react-icons/sl";
 import { IoMdClose } from "react-icons/io";
+import { FaArrowUp } from "react-icons/fa6";
 
 import "./style/style.css";
-const Navbar = () => {
+const Navbar = ({ handleScrollToSection }) => {
   const [pageDown, setPageDown] = useState(false);
   const [searchBar, serSearchBar] = useState(false);
   const [sideBar, setSideBar] = useState(false);
@@ -26,9 +28,33 @@ const Navbar = () => {
     serSearchBar(!searchBar);
   };
 
+  const [scrolling, setScrolling] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100; // Convert to percentage
+      setScrollProgress(progress);
+      setScrolling(scrollTop > 50); // Show button after scrolling 50px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // SVG Circle properties
+  const circleRadius = 24; // Radius of the circle
+  const circleCircumference = 2 * Math.PI * circleRadius; // Circumference
+  const progressOffset =
+    circleCircumference - (scrollProgress / 100) * circleCircumference;
+
+  // cos
   return (
     <>
-      <div className="navbar">
+      <div id="navbar" className="navbar">
         <div className="header-top">
           <div className="header-top-box header-top-box-1">
             <div className="top-content-box">
@@ -105,13 +131,13 @@ const Navbar = () => {
             <nav>
               <ul>
                 <li>
-                  <a href="/" className="menu-link">
+                  <Link to="/" className="menu-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-link-box">
                   <a
-                    href="/pages"
+                    href="/#pages"
                     onMouseEnter={() => setPageDown(true)}
                     onMouseLeave={() => setPageDown(false)}
                     className="menu-link"
@@ -128,42 +154,98 @@ const Navbar = () => {
 
                   <ul className="dropdown">
                     <li>
-                      <a href="/pages/aboutUs">About Us</a>
+                      <a
+                        href="/#pages/aboutUs"
+                        target=""
+                        onClick={() => handleScrollToSection("aboutUs")}
+                      >
+                        About Us
+                      </a>
                     </li>
                     <li>
-                      <a href="/pages/pricing">Pricing</a>
+                      <a
+                        href="/#pages/pricing"
+                        target=""
+                        onClick={() => handleScrollToSection("pricing")}
+                      >
+                        Pricing
+                      </a>
                     </li>
                     <li>
-                      <a href="/pages/team">Team</a>
+                      <a
+                        href="/#pages/team"
+                        target=""
+                        onClick={() => handleScrollToSection("team")}
+                      >
+                        Team
+                      </a>
                     </li>
                     <li>
-                      <a href="/pages/testimonial">Testimonial</a>
+                      <a
+                        href="/#pages/testimonial"
+                        target=""
+                        onClick={() => handleScrollToSection("testimonial")}
+                      >
+                        Testimonial
+                      </a>
                     </li>
                     <li>
-                      <a href="/pages/faq">Faq</a>
+                      <a
+                        href="/#pages/faq"
+                        target=""
+                        onClick={() => handleScrollToSection("faq")}
+                      >
+                        Faq
+                      </a>
                     </li>
                     <li>
-                      <a href="/pages/clients">Clients & Partners</a>
+                      <a
+                        href="/#pages/clients"
+                        target=""
+                        onClick={() => handleScrollToSection("clients")}
+                      >
+                        Clients & Partners
+                      </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/services" className="menu-link">
+                  <a
+                    href="/#pages/services"
+                    target=""
+                    onClick={() => handleScrollToSection("services")}
+                    className="menu-link"
+                  >
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="/projects" className="menu-link">
+                  <a
+                    href="/#pages/projects"
+                    target=""
+                    onClick={() => handleScrollToSection("projects")}
+                    className="menu-link"
+                  >
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="/blog" className="menu-link">
+                  <a
+                    href="/#pages/blog"
+                    target=""
+                    onClick={() => handleScrollToSection("blog")}
+                    className="menu-link"
+                  >
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="/contact" className="menu-link">
+                  <a
+                    href="/#pages/contact"
+                    target=""
+                    onClick={() => handleScrollToSection("contact")}
+                    className="menu-link"
+                  >
                     Contact
                   </a>
                 </li>
@@ -340,28 +422,113 @@ const Navbar = () => {
                       : "more-menu-link-hidden"
                   }`}
                 >
-                  <a href=""> About Us</a>
-                  <a href=""> Pricing</a>
-                  <a href=""> Team</a>
-                  <a href=""> Testomonial</a>
-                  <a href=""> Faq</a>
-                  <a href=""> Clints & Partners</a>
+                  <a target="" onClick={() => handleScrollToSection("aboutUs")}>
+                    {" "}
+                    About Us
+                  </a>
+                  <a target="" onClick={() => handleScrollToSection("pricing")}>
+                    {" "}
+                    Pricing
+                  </a>
+                  <a target="" onClick={() => handleScrollToSection("team")}>
+                    {" "}
+                    Team
+                  </a>
+                  <a
+                    target=""
+                    onClick={() => handleScrollToSection("testimonial")}
+                  >
+                    {" "}
+                    Testomonial
+                  </a>
+                  <a target="" onClick={() => handleScrollToSection("faq")}>
+                    {" "}
+                    Faq
+                  </a>
+                  <a target="" onClick={() => handleScrollToSection("clients")}>
+                    {" "}
+                    Clints & Partners
+                  </a>
                 </div>
               </div>
             </div>
             <div className="side-nav-menu-link">
-              <a href=""> Services </a>
+              <a
+                href="/#services"
+                target=""
+                onClick={() => handleScrollToSection("services")}
+              >
+                {" "}
+                Services{" "}
+              </a>
             </div>
             <div className="side-nav-menu-link">
-              <a href=""> Projects </a>
+              <a
+                href="/#projects"
+                target=""
+                onClick={() => handleScrollToSection("projects")}
+              >
+                {" "}
+                Projects{" "}
+              </a>
             </div>
             <div className="side-nav-menu-link">
-              <a href=""> Blog </a>
+              <a
+                href="/#blog"
+                target=""
+                onClick={() => handleScrollToSection("blog")}
+              >
+                {" "}
+                Blog{" "}
+              </a>
             </div>
             <div className="side-nav-menu-link">
-              <a href=""> Contact </a>
+              <a
+                href="/#contact"
+                target=""
+                onClick={() => handleScrollToSection("contact")}
+              >
+                {" "}
+                Contact{" "}
+              </a>
             </div>
           </div>
+        </div>
+        <div
+          className="scrollup"
+          style={{
+            display: scrolling ? "flex" : "none",
+          }}
+          onClick={() => handleScrollToSection("navbar")}
+        >
+          {/* SVG Circular Progress */}
+          <svg width="50" height="50" viewBox="0 0 60 60">
+            <circle
+              cx="30"
+              cy="30"
+              r={circleRadius}
+              stroke="#fff"
+              strokeWidth="2"
+              fill="transparent"
+              strokeDasharray={circleCircumference}
+              strokeDashoffset={progressOffset}
+              strokeLinecap="round"
+              transform="rotate(-90 30 30)" // Rotates to start from the top
+              style={{ transition: "stroke-dashoffset 0.3s ease" }}
+            />
+          </svg>
+
+          {/* Arrow Icon */}
+          <FaArrowUp
+            size={16}
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              color: "#fff",
+            }}
+          />
         </div>
       </div>
     </>

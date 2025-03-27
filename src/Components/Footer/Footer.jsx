@@ -12,7 +12,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <div className="footer-container">
+      <div id="footer" className="footer-container">
         <div className="footer-sub-container">
           <div className="grid-container-box">
             <div className="footer-sub-box-1">

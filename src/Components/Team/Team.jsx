@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Team = () => {
   return (
     <>
-      <div className="team-container">
+      <div id="team" className="team-container">
         <div className="team-sub-container">
           <div className="team-about-part">
             <div className="team-about-title-inner">

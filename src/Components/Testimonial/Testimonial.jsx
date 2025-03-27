@@ -52,8 +52,7 @@ const Testimonial = () => {
   const card = cards[currentIndex];
 
   return (
-    <div className="testimonial-container">
-      <div className="black-box"></div>
+    <div id="testimonial" className="testimonial-container">
       <div className="testimonial-sub-container">
         <div className="testimonial-about-part">
           <div className="testimonial-about-title-inner">

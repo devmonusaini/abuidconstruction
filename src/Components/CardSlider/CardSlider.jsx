@@ -86,7 +86,7 @@ const CardSlider = () => {
 
   return (
     <>
-      <div className="slider-main-container">
+      <div id="cardSlider" className="slider-main-container">
         <div className="slider-container">
           <div className="slider-title-inner">
             <h5>Services</h5>
