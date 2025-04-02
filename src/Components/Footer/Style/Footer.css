@@ -195,6 +195,7 @@
     padding: 20px 0px;
  width: 100%;
  display: flex;
+ gap: 20px;
  justify-content: space-between;
  align-items: center;
 flex-direction: row;
@@ -210,7 +211,7 @@ flex-direction: row;
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    padding: 20px 0px;
+ 
 }
 
 .bottom-social-media-icon a{
@@ -218,9 +219,9 @@ flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    height: 60px;
-    width: 60px;
+    font-size: 16px;
+    height: 46px;
+    width: 46px;
     background-color: #000;
     color: #ffffff;
     border-radius: 50%;

@@ -1,0 +1,178 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./ProjectPage.css";
+import projectImage from "../../Images/pro-details.jpg";
+import portfolioImage1 from "../../Images/portfolio-img1.png";
+import portfolioImage2 from "../../Images/portfolio-img2.png";
+
+const ProjectPage = () => {
+  return (
+    <>
+      <header className="project-header">
+        <h1>Repair & Expand</h1>
+        <p>
+          <Link to="/">Home</Link> / <span>Repair & Expand</span>
+        </p>
+      </header>
+      
+      <section className="project-content">
+        <div className="project-image-container">
+          <img src={projectImage} alt="Project" className="project-image" />
+        </div>
+        
+        <div className="content-wrapper">
+          <div className="details-grid">
+            <div className="details-item"><h6>Client:</h6><p>Clinex Mex</p></div>
+            <div className="details-item"><h6>Category:</h6><p>Industry & Factory</p></div>
+            <div className="details-item"><h6>Timeframe:</h6><p>August 05, 2024</p></div>
+            <div className="details-item"><h6>Website:</h6><p>www.onnat.com</p></div>
+          </div>
+          
+          <article className="description">
+            <h2>Toshiba Unveils Electric Catalyst Technology for Carbon Recycling</h2>
+            <p>
+              Phasellus non libero vel sapien consectetur lacinia in vitae nisl. Aliquam eget porta urna, eu hendrerit tellus. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim nisl in tortor tristique, 
+              et ornare nisl vulputate.
+            </p>
+            <p>
+              Nullam dapibus faucibus lorem. Mauris ullamcorper, lectus non imperdiet tempus, arcu justo blandit ante, 
+              et venenatis neque orci placerat diam. Pellentesque mollis tincidunt rhoncus.
+            </p>
+          </article>
+          
+          <div className="portfolio-gallery">
+            <img src={portfolioImage1} alt="Portfolio 1" className="portfolio-image fade-in" />
+            <img src={portfolioImage2} alt="Portfolio 2" className="portfolio-image fade-in" />
+          </div>
+          
+          <article className="challenge-section">
+            <h2>Project Challenges</h2>
+            <p>
+              Phasellus non libero vel sapien consectetur lacinia in vitae nisl. Aliquam eget porta urna, eu hendrerit tellus. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </article>
+          
+          <article className="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <p>
+              Phasellus non libero vel sapien consectetur lacinia in vitae nisl. Aliquam eget porta urna, eu hendrerit tellus. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </article>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ProjectPage;
+
+/* CSS (ProjectPage.css) */
+
+.project-header {
+    width: 100vw;
+    height: 450px;
+    background-image: url(../../Images/inner_new04.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.project-header h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.project-header p {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.project-header p a {
+    color: white;
+    text-decoration: none;
+}
+
+.project-header p a:hover {
+    color: #fb5b11;
+}
+
+.project-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.project-image-container {
+    text-align: center;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.details-item h6 {
+    font-size: 16px;
+    color: #575757;
+    margin-bottom: 5px;
+}
+
+.details-item p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.description, .challenge-section, .faq-section {
+    margin-top: 20px;
+}
+
+.portfolio-gallery {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.portfolio-image {
+    width: 48%;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media screen and (max-width: 768px) {
+    .project-header h1 { font-size: 36px; }
+    .project-header p { font-size: 16px; }
+    .details-grid { grid-template-columns: 1fr; }
+    .portfolio-gallery { flex-direction: column; }
+    .portfolio-image { width: 100%; }
+}

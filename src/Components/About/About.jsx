@@ -1,6 +1,7 @@
 import React from "react";
 import "./style/about.css";
 import about from "../../Images/about1.png";
+import { ReactTyped } from "react-typed";
 const About = () => {
   return (
     <div id="aboutUs" className="container">
@@ -22,8 +23,18 @@ const About = () => {
         <div className="about-part">
           <div className="about-title-inner">
             <h5>Who we are</h5>
-            <h1>
-              We Are Commecial and Residential Construction Company Since 1999.
+
+            <h1 className="fade-in-out">
+              <ReactTyped
+                startWhenVisible
+                strings={[
+                  " We Are Commecial and Residential Construction Company Since 1999.",
+                ]}
+                typeSpeed={20}
+                backSpeed={10}
+                showCursor={false}
+                loop={false}
+              />
             </h1>
             <div className="about-description">
               <p>

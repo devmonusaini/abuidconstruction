@@ -9,6 +9,7 @@ import services03 from "../../Images/services_03-700x472.jpg";
 import services04 from "../../Images/services_04-700x472.png";
 import services05 from "../../Images/services_06-700x472.png";
 import services06 from "../../Images/services_05-700x472.png";
+import { ReactTyped } from "react-typed";
 
 const CardSlider = () => {
   const cards = [
@@ -51,8 +52,10 @@ const CardSlider = () => {
   // Handle screen resize
   useEffect(() => {
     const updateVisibleCards = () => {
-      if (window.innerWidth <= 768) {
-        setVisibleCards(1); // Show 1 card on small screens
+      if (window.innerWidth <= 458) {
+        setVisibleCards(1); // Show 2 cards on mobile screens
+      } else if (window.innerWidth <= 768) {
+        setVisibleCards(2); // Show 1 card on small screens
       } else if (window.innerWidth <= 1024) {
         setVisibleCards(2); // Show 2 cards on tablets
       } else {
@@ -90,7 +93,17 @@ const CardSlider = () => {
         <div className="slider-container">
           <div className="slider-title-inner">
             <h5>Services</h5>
-            <h1>Providing Solutions Of Every Kind</h1>
+
+            <h1 className="fade-in-out">
+              <ReactTyped
+                startWhenVisible
+                strings={["Providing Solutions Of Every Kind"]}
+                typeSpeed={20}
+                backSpeed={10}
+                showCursor={false}
+                loop={false}
+              />
+            </h1>
             <div className="slider-description">
               <p>Engines, prime movers, and exhaust gas turbochargers.</p>
             </div>

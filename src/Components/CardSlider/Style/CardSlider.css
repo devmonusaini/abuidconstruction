@@ -113,6 +113,7 @@ color: #5f5f5f;
   }
   
   .slider-content {
+    
    display: grid;
    grid-template-columns: auto auto auto ;
    gap: 20px;
@@ -250,7 +251,7 @@ color: #5f5f5f;
       align-items: flex-start;
     }
     .slider-title-inner{
-      max-width: 100%;
+      min-width: 100%;
       z-index: 2;
       margin: 10px 0px;
   
@@ -263,5 +264,33 @@ color: #5f5f5f;
       font-family: "Jost", sans-serif;
       font-style: normal;
   }
+  .slider-controls {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+    
+  .slider-content {
+    width: 100%;
+    padding: 0px;
+    margin: 0px  0px  0px auto;
+    
+   }
+   .card {
+    min-width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the image doesn't overflow the card */
+  }
+   
   }
   

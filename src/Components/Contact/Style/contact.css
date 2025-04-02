@@ -168,3 +168,22 @@
         border-top: 5px solid #f0470f;
     }
 }
+@media (max-width: 768px) {
+    .form-grid-box{
+        grid-template-columns: auto;
+    }
+    .contact-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:center; /* Push content to the end (right side) */
+        align-items: center;
+     
+    }
+    
+    .contact-image img {
+        width: 100%;
+        height: 100%;
+      
+    }
+}

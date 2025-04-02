@@ -6,6 +6,7 @@ import team03 from "../../Images/team-thumb-4-768x842.jpg";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { ReactTyped } from "react-typed";
 const Team = () => {
   return (
     <>
@@ -14,7 +15,16 @@ const Team = () => {
           <div className="team-about-part">
             <div className="team-about-title-inner">
               <h5>Our Team Member </h5>
-              <h1>Our Dedicated Team Members</h1>
+              <h1 className="fade-in-out">
+                <ReactTyped
+                  startWhenVisible
+                  strings={["Our Dedicated Team Members"]}
+                  typeSpeed={20}
+                  backSpeed={10}
+                  showCursor={false}
+                  loop={false}
+                />
+              </h1>
             </div>
             <div className="team-all-member-btn-box">
               <a href="" className="">

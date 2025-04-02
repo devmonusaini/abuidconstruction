@@ -17,7 +17,6 @@ import { FaFacebookF, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import { SlSocialDribbble } from "react-icons/sl";
 import { IoMdClose } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa6";
-
 import "./style/style.css";
 const Navbar = ({ handleScrollToSection }) => {
   const [pageDown, setPageDown] = useState(false);
@@ -122,7 +121,11 @@ const Navbar = ({ handleScrollToSection }) => {
             </div>
           </div>
         </div>
-
+        <div
+          style={{
+            marginBottom: "10px",
+          }}
+        ></div>
         <header className="header">
           <div className="header-container">
             <div className="logo-box">
@@ -210,24 +213,23 @@ const Navbar = ({ handleScrollToSection }) => {
                   </ul>
                 </li>
                 <li>
-                  <a
-                    href="/#pages/services"
-                    target=""
+                  <Link
+                    to="/service-page"
                     onClick={() => handleScrollToSection("services")}
                     className="menu-link"
                   >
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/#pages/projects"
+                  <Link
+                    to="/project-page"
                     target=""
                     onClick={() => handleScrollToSection("projects")}
                     className="menu-link"
                   >
                     Projects
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -240,14 +242,9 @@ const Navbar = ({ handleScrollToSection }) => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/#pages/contact"
-                    target=""
-                    onClick={() => handleScrollToSection("contact")}
-                    className="menu-link"
-                  >
+                  <Link to="/contact-page" className="menu-link">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -301,11 +298,7 @@ const Navbar = ({ handleScrollToSection }) => {
           className={`side-nav ${
             sideBar ? "side-nav-show" : "side-nav-hidden"
           }`}
-        >
-          {/* <div className="mobile-nav">
-            <div className="mobile-nav-container"></div>
-          </div> */}
-        </div>
+        ></div>
         <div
           className={`side-nav-container ${
             sideBar ? "side-nav-container-show" : "side-nav-container-hidden"
@@ -422,30 +415,63 @@ const Navbar = ({ handleScrollToSection }) => {
                       : "more-menu-link-hidden"
                   }`}
                 >
-                  <a target="" onClick={() => handleScrollToSection("aboutUs")}>
+                  <a
+                    target=""
+                    onClick={() => {
+                      handleScrollToSection("aboutUs");
+                      setSideBar(false);
+                    }}
+                  >
                     {" "}
                     About Us
                   </a>
-                  <a target="" onClick={() => handleScrollToSection("pricing")}>
+                  <a
+                    target=""
+                    onClick={() => {
+                      handleScrollToSection("pricing");
+                      setSideBar(false);
+                    }}
+                  >
                     {" "}
                     Pricing
                   </a>
-                  <a target="" onClick={() => handleScrollToSection("team")}>
+                  <a
+                    target=""
+                    onClick={() => {
+                      handleScrollToSection("team");
+                      setSideBar(false);
+                    }}
+                  >
                     {" "}
                     Team
                   </a>
                   <a
                     target=""
-                    onClick={() => handleScrollToSection("testimonial")}
+                    onClick={() => {
+                      handleScrollToSection("testimonial");
+                      setSideBar(false);
+                    }}
                   >
                     {" "}
                     Testomonial
                   </a>
-                  <a target="" onClick={() => handleScrollToSection("faq")}>
+                  <a
+                    target=""
+                    onClick={() => {
+                      handleScrollToSection("faq");
+                      setSideBar(false);
+                    }}
+                  >
                     {" "}
                     Faq
                   </a>
-                  <a target="" onClick={() => handleScrollToSection("clients")}>
+                  <a
+                    target=""
+                    onClick={() => {
+                      handleScrollToSection("clients");
+                      setSideBar(false);
+                    }}
+                  >
                     {" "}
                     Clints & Partners
                   </a>
@@ -453,44 +479,53 @@ const Navbar = ({ handleScrollToSection }) => {
               </div>
             </div>
             <div className="side-nav-menu-link">
-              <a
-                href="/#services"
-                target=""
-                onClick={() => handleScrollToSection("services")}
+              <Link
+                to="/service-page"
+                onClick={() => {
+                  handleScrollToSection("services");
+                  setSideBar(false);
+                }}
               >
                 {" "}
                 Services{" "}
-              </a>
+              </Link>
             </div>
             <div className="side-nav-menu-link">
-              <a
-                href="/#projects"
+              <Link
+                to="/project-page"
                 target=""
-                onClick={() => handleScrollToSection("projects")}
+                onClick={() => {
+                  handleScrollToSection("projects");
+                  setSideBar(false);
+                }}
               >
                 {" "}
                 Projects{" "}
-              </a>
+              </Link>
             </div>
             <div className="side-nav-menu-link">
               <a
                 href="/#blog"
                 target=""
-                onClick={() => handleScrollToSection("blog")}
+                onClick={() => {
+                  handleScrollToSection("blog");
+                  setSideBar(false);
+                }}
               >
                 {" "}
                 Blog{" "}
               </a>
             </div>
             <div className="side-nav-menu-link">
-              <a
-                href="/#contact"
-                target=""
-                onClick={() => handleScrollToSection("contact")}
+              <Link
+                to="/contact-page"
+                onClick={() => {
+                  setSideBar(false);
+                }}
               >
                 {" "}
-                Contact{" "}
-              </a>
+                Contact{"  "}
+              </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Style/Testimonial.css";
 import rec from "../../Images/rec.png";
 import { motion } from "framer-motion";
+import { ReactTyped } from "react-typed";
 
 const Testimonial = () => {
   const totalCards = 4;
@@ -57,6 +58,7 @@ const Testimonial = () => {
         <div className="testimonial-about-part">
           <div className="testimonial-about-title-inner">
             <h5>Our Testimonial</h5>
+
             <h1>What Our Clients Say About Our Work.</h1>
           </div>
         </div>
@@ -65,7 +67,16 @@ const Testimonial = () => {
             <div className="testimonial-card-image">
               <img src={rec} alt="testimonial image" />
             </div>
-            <h1>Let’s Build Future</h1>
+            <h1 className="fade-in-out">
+              <ReactTyped
+                startWhenVisible
+                strings={["Let’s Build Future"]}
+                typeSpeed={20}
+                backSpeed={10}
+                showCursor={false}
+                loop={false}
+              />
+            </h1>
             <p>
               We denounce righteous indignation and dislike men who are so
               beguiled and demoralized by the charms of pleasure of the moment.
